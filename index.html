@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veb saytların hazırlanması, Domain, Hosting satışı</title>
+    <link rel="shortcun icon" href="img/icon.ico">
+    <link rel="stylesheet" href="style/output.css">
+    <link rel="stylesheet" href="style/input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header class="bg-white sticky top-0 z-50">
+        <nav class="py-[24px] px-[28px] flex justify-between items-center">
+            <a href="index.html"><img src="img/saytaz.svg" alt="logo" width="114" height="32"></a>
+            <menu id="navbarMenu" class="hidden lg:flex lg:gap-x-6 2xl:gap-x-[60px] items-center">
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('0')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Veb Sayt</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-150px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('1')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Domen</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-100px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('2')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Hostinq</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-100px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('3')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Xidmətlər</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-100px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('4')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Şirkət</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-200px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+            </menu>
+            <div class="flex items-center gap-5">
+                <div class="flex items-center gap-4 ml-5 xl:ml-0">
+                    <div class="relative currency-container">
+                        <div onclick="currencyMenu()" class="flex items-center cursor-pointer">
+                            <p id="selectedCurrency" class="text-2xl">₼</p>
+                            <i
+                                class="fa-solid fa-chevron-down text-sm pl-5 text-gray-300 hover:text-slate-400 transition delay-100 duration-100"></i>
+                        </div>
+                        <ul id="currencyMenu" class="absolute left-0 mt-2 bg-white border rounded h-16 w-16 hidden">
+                            <li onclick="selectCurrency('$')" id="dollar" class="cursor-pointer text-center text-lg">$
+                            </li>
+                            <li onclick="selectCurrency('₼')" id="manat"
+                                class="cursor-pointer mt-[3px] text-center text-lg">₼
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative language-container">
+                        <div onclick="languageMenu()" class="flex items-center cursor-pointer">
+                            <img id="selectedLanguage" class="cover" src="img/Flag_of_Azerbaijan.png" alt="flag"
+                                width="30" height="40">
+                            <i
+                                class="fa-solid fa-chevron-down text-sm pl-5 text-gray-300 hover:text-slate-400 transition delay-100 duration-100"></i>
+                        </div>
+                        <ul id="languageMenu" class="absolute left-0 mt-4 bg-white border rounded h-16 w-16 hidden">
+                            <li onclick="selectLanguage('usa')" id="usa"
+                                class="cursor-pointer flex items-center justify-center mt-[3px] p-1">
+                                <img src="img/usa_flag.webp" alt="flag" width="30" height="40">
+                            </li>
+                            <li onclick="selectLanguage('az')" id="az"
+                                class="cursor-pointer mt-[3px] flex items-center justify-center p-1.5">
+                                <img src="img/Flag_of_Azerbaijan.png" alt="flag" width="30" height="40">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden xl:flex pl-1 gap-4">
+                        <button id="qiymet"
+                            class="border text-white py-2 px-6 rounded-lg text-center font-semibold">Qiymət Təklifi
+                            Al</button>
+                        <button
+                            class="border text-[#A271F2] border-[#A271F2] py-2 px-5 rounded-lg text-center font-semibold">Daxil
+                            olun</button>
+                    </div>
+                </div>
+                <div class="xl:hidden">
+                    <button onclick="openSidebar()"><i class="fa-solid fa-bars text-lg text-gray-600"></i></button>
+                </div>
+                <div id="sidebarMenu"
+                    class="fixed top-0 right-0 max-w-[400px] w-full h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+                    <button onclick="closeSidebar()" class="absolute top-4 right-4 text-gray-600 text-xl"><i
+                            class="fa-solid fa-xmark"></i></button>
+                    <menu id="sidebarNavMenu" class="flex flex-col lg:hidden items-start pt-12 px-6 space-y-4">
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('0')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Veb Sayt</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('1')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Domen</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('2')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Hostinq</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('3')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Xidmətlər</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('4')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Şirkət</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>                                  
+                            </h2> 
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                    </menu>
+                    <div class="mt-8 lg:mt-16 px-6 flex flex-col space-y-3">
+                        <button id="qiymet" class="bg-[#A271F2] text-white py-2 px-6 rounded-lg font-semibold">Qiymət
+                            Təklifi Al</button>
+                        <button class="border border-[#A271F2] text-[#A271F2] py-2 px-5 rounded-lg font-semibold">Daxil
+                            olun</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="sm:pt-[250px] leading-[50px] text-2xl sm:pb-[340px] md:text-[32px] lg:text-5xl sm:h-screen-minus-88 max-h-[100vh] sm:text-[24px] 
+    sm:leading-[55px] lg:leading-[80px] sm:tracking-[0.2px] relative flex flex-col justify-center items-center mx-auto
+     lg:px-[20vw] lg:py-[100px] text-center text-slate-700 h-screen-minus-90">
+                <h1 class="sm:mb-4 sm:px-4 md:text-xlg lg:text-xxlg font-medium mb-8 px-10">
+                    Biznesinizi bizimlə rəqəmsal dünyada
+                    <span class="mx-3 sm:mx-4 md:mx-6 text-blue-600 relative lg:mx-[30px] text-5 whitespace-nowrap">daha
+                        asan
+                        <i
+                            class="absolute -top-4 -left-[14px] md:-top-5 md:-left-3 lg:-top-7 lg:-left-6 w-[120%] h-14 text-violet-300 z-0">
+                            <img src="img/easier.svg" alt="line"></i>
+                    </span>
+                    yoldan irəliyə apar!
+                </h1>
+                <p
+                    class="text-base sm:px-4 sm:text-base sm:mb-8 font-normal text-slate-500 lg:text-[20px] lg:px-[140px] mb-12">
+                    Mütəxəssislərdən ibarət komandamız sizə müştəri dəstəyi və texniki yardım göstərmək üçün 24/7
+                    hazırdır.
+                </p>
+                <div class="flex justify-center">
+                    <button
+                        class="border-[3px] border-[#A271F2] px-8 py-5 rounded-lg text-blue-600 text-[16px] leading-[10px] font-medium mb-[100px] md:mb-[153px]">
+                        Sayt Sifariş Et
+
+                    </button>
+                </div>
+                <i class="cursor-pointer absolute bottom-10" onclick="scrollToSection()">
+                    <span class="scroll__items">
+                        <img alt="scroll" loading="lazy" width="30" height="50" style="color:transparent"
+                            src="img/check.svg">
+                        <span class="absolute top-2 left-2 ">
+                            <img alt="circle" loading="lazy" width="14" height="14" class="max-w-[14px] max-h-[14px]"
+                                style="color:transparent" src="img//circle.svg">
+                        </span>
+                    </span>
+                </i>
+            </div>
+        </section>
+        <section
+            class="px-4 py-8 flex flex-col gap-20 lg:mt-20 md:mt-12 sm:mt-4 mt-0 xlg:flex-row xlg:items-center max-w-7xl mx-auto">
+            <div class="hidden xs:flex flex-col gap-8 w-full xlg:w-1/2">
+                <div class="flex gap-5 justify-between">
+                    <div class="overflow-hidden rounded-lg w-[33%] bg-white px-4 py-5 sm:p-6 flex flex-col items-center justify-between h-[280px] mb-3"
+                        style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                        <p class="text-center text-sm font-medium text-gray-500">Tamamlandı</p>
+                        <div class="text-center relative">
+                            <img src="img/100percent.jpg" width="70" height="70" alt="100%">
+                            <h2
+                                class="absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-lg font-bold ">
+                                100%</h2>
+                        </div>
+                        <h3 class="mt-1 md:text-xl text-sm font-bold tracking-tight text-gray-800">Sabina G.</h3>
+                        <p class="mt-1 text-[13px] font-semibold text-gray-400">Designer</p>
+                    </div>
+                    <div class="overflow-hidden rounded-lg w-[33%] bg-white px-4 py-5 sm:p-6 flex flex-col items-center justify-between h-[280px]"
+                        style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                        <p class="text-center text-sm font-medium text-gray-500">Icradadır</p>
+                        <div class="text-center relative">
+                            <img src="img/modified_circle_darker_red.png" width="70" height="70" alt="90%">
+                            <h2
+                                class="absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-lg font-bold ">
+                                90%</h2>
+                        </div>
+                        <h3 class="mt-1 md:text-xl text-sm font-bold tracking-tight text-gray-800">Fuad M.</h3>
+                        <p class="mt-1 text-[13px] font-semibold text-gray-400">Frontend Developer</p>
+                    </div>
+                    <div class="overflow-hidden rounded-lg w-[33%] bg-white px-4 py-5 sm:p-6 flex flex-col items-center justify-between h-[280px]"
+                        style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+                        <p class="text-center text-sm font-medium text-gray-500">Icradadır</p>
+                        <div class="text-center relative">
+                            <img src="img/modified_circle_darker_red.png" width="70" height="70" alt="65%">
+                            <h2
+                                class="absolute text-center top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-lg font-bold">
+                                65%</h2>
+                        </div>
+                        <h3 class="mt-1 md:text-xl text-sm font-bold tracking-tight text-gray-800">Ahmad R.</h3>
+                        <p class="mt-1 text-[13px] font-semibold text-gray-400">Backend Developer</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center">
+                    <div class="w-full max-w-[80%] px-4 flex flex-col gap-4 ">
+                        <div class="relative">
+                            <div class="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-[2px] bg-gray-200">
+                                <div class="h-full bg-violet-500 w-1/2"></div>
+                            </div>
+                            <div class="flex justify-between relative">
+                                <div class="flex flex-row items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-violet-500 hover:bg-[#7d36ee] flex items-center justify-center z-10">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white"
+                                            viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full border-2 border-violet-500 bg-white p-2 flex items-center justify-center z-10">
+                                        <div class="w-full h-full rounded-full bg-violet-500"></div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row-reverse items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full border-2 border-gray-300 bg-white p-2 z-10 hover:border-gray-400">
+                                        <div class="w-full h-full rounded-full hover:bg-violet-300"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-center">
+                            <p class="text-base font-medium text-gray-500">Web Design</p>
+                            <p class="text-base font-medium text-gray-500">Back-end</p>
+                            <p class="text-base font-medium text-gray-500">Front-end</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between gap-[50px] p-10 w-full xlg:w-1/2">
+                <h2 class="font-bold  text-[25px] text-center leading-[32px]">Vebsayt sifarişinizi <br> izləyin</h2>
+                <div class="flex flex-col gap-4">
+                    <input type="text" placeholder="Sifariş kodu"
+                        class=" h-[50px] border border-[#676767] rounded-xl text-center focus:outline-none text-[#676767] placeholder:text-[#676767] placeholder:font-semibold">
+                    <button
+                        class="bg-[#A271F2] hover:bg-purple-700 text-white h-[50px] rounded-xl text-lg font-semibold"
+                        style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">İzlə</button>
+                </div>
+                <p class="text-xs text-center text-gray-500">Sayt.az ilə sifarişlərinizə hər zaman nəzarət edin</p>
+            </div>
+        </section>
+        <section id="domenSec" class="bg-gray-100 py-24 text-center mx-auto">
+            <div class="flex flex-col gap-5">
+                <h2 class="text-base sm:text-[22px] md:text-[32px] font-medium text-[#300B60]">Domen Adını Axtarın</h2>
+                <p class="sm:text-base text-[#300B60] text-[20px]">.az domain sifariş etməmişdən öncə <span
+                        class="font-bold">whois.az</span> saytında yoxlayın</p>
+                <p class="text-[#300B60] text-[20px] sm:text-base max-w-[636px] mx-auto"> Sayt.az-da .az domenləri
+                    yalnız aktiv hosting planı olan müştərilər üçün əlçatandır. Davam etməzdən əvvəl bizdən hosting
+                    aldığınıza əmin olun. <span class="cursor-pointer ml-1 font-bold"> Ətraflı oxu...</span></p>
+            </div>
+            <div class="mt-12 mx-1 sm:mx-4">
+                <form
+                    class="bg-white flex justify-between items-center max-w-[680px] mx-auto h-[50px] rounded-xl border border-solid border-gray-400 overflow-hidden"
+                    style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;">
+                    <input type="text" placeholder="İstədiyiniz domen adını daxil edin"
+                        class="ml-5 w-full mt-[1px] pr-3 h-full text-black outline-none focus-within:outline-none placeholder:text-slate-400"
+                        id="inpDomen" oninput="domen()">
+                    <div class="flex justify-center items-center gap-2">
+                        <div>
+                            <select class="h-full bg-transparent text-slate-500 outline-none border-l border-0 pl-2"
+                                id="selDomen">
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .com</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .net</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .info</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .biz</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .org</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .us</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .in</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .ws</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .mobi</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .tv</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .me</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .ru</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .de</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .com.az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .co</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .site.az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .sayt.az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .ureb.com</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .org.az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .info.az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .biz.az</option>
+                                <option
+                                    class="sm:text-[13px] md:text-base font-medium text-slate-500 checked:bg-purple-500 checked:text-white">
+                                    .net.az</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="cursor-pointer bg-[#9156f0] py-2 px-7 h-[50px] rounded-xl text-white hover:bg-violet-600">Axtar</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="max-w-[680px] text-left mx-auto text-[#300B60] mt-2" id="domenWarn"></p>
+                <div class="flex flex-wrap max-w-[680px] mx-auto justify-between mt-10 gap-6 sm:gap-0">
+                    <div class="w-full sm:w-[33%] md:w-[16%] text-[#A271F2] sm:p-4 md:px-6 cursor-pointer"
+                        onclick="uzanti('.az')">
+                        <h2 class="text-2xl font-semibold">.az</h2>
+                        <p class="font-semibold">₼40/il</p>
+                    </div>
+                    <div class="w-full sm:w-[33%] md:w-[16%] text-[#A271F2] sm:p-4 md:px-6 cursor-pointer"
+                        onclick="uzanti('.com')">
+                        <h2 class="text-2xl font-semibold">.com</h2>
+                        <p class="font-semibold">₼25/il</p>
+                    </div>
+                    <div class="w-full sm:w-[33%] md:w-[16%] text-[#A271F2] sm:p-4 md:px-6 cursor-pointer"
+                        onclick="uzanti('.net')">
+                        <h2 class="text-2xl font-semibold">.net</h2>
+                        <p class="font-semibold">₼38/il</p>
+                    </div>
+                    <div class="w-full sm:w-[33%] md:w-[16%] text-[#A271F2] sm:p-4 md:px-6 cursor-pointer"
+                        onclick="uzanti('.info')">
+                        <h2 class="text-2xl font-semibold">.info</h2>
+                        <p class="font-semibold">₼55/il</p>
+                    </div>
+                    <div class="w-full sm:w-[33%] md:w-[16%] text-[#A271F2] sm:p-4 md:px-6 cursor-pointer"
+                        onclick="uzanti('.biz')">
+                        <h2 class="text-2xl font-semibold">.biz</h2>
+                        <p class="font-semibold">₼30/il</p>
+                    </div>
+                    <div class="w-full sm:w-[33%] md:w-[16%] text-[#A271F2] sm:p-4 md:px-6 cursor-pointer"
+                        onclick="uzanti('.org')">
+                        <h2 class="text-2xl font-semibold">.org</h2>
+                        <p class="font-semibold">₼35/il</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="priceSec" class="sm:py-16 py-8 mx-auto max-w-7xl">
+            <div class="flex  flex-col md:flex-row items-center justify-between lsm:px-12 px-4 md:mb-16 lsm:mb-8 mb-4">
+                <div class="lg:w-1/2 flex flex-col max-w-[1296px] gap-8">
+                    <h2
+                        class="md:text-[42px] sm:text-3xl text-xl md:leading-[42px] sm:leading-[30px] leading-5 tracking-[0.1px] text-[#300B60] font-bold text-start">
+                        Hostinq Planınızı Seçin</h2>
+                    <p class="sm:text-xl text-base sm:tracking-[0.1px] sm:font-medium text-[#4A2182] text-start">Yaxşı
+                        Bir Başlanğıc Təhlükəsiz və Güclü Hostinq Tələb Edir</p>
+                </div>
+                <div class="lg:w-1/2 pt-10">
+                    <div
+                        class="sm:w-fit sm:justify-between md:w-fit mt-4 md:justify-start  inline-flex border border-input-border rounded-3xl">
+                        <span onclick="ayliq()" id="ayliq"
+                            class="sm:w-50 w-20 py-3 sm:px-8 px-4 sm:w-[120px] md:py-[13px] md:w-[124px] xs:text-base text-sm flex items-center ease-out justify-center bg-[#A271F2] rounded-3xl cursor-pointer text-white font-medium transition-colors duration-[100ms]">Aylıq</span>
+                        <span onclick="illik()" id="illik"
+                            class="sm:w-50 w-20 py-3 sm:px-8 px-4 sm:w-[120px] md:py-[13px] md:w-[124px] xs:text-base text-sm flex items-center ease-out justify-center rounded-3xl cursor-pointer text-[#94A3B8] bg-white font-medium">İllik</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap p-4 gap-4 lmd:gap-0 items-center">
+                <div
+                    class="ring-1 ring-gray-100 shadow-md rounded-lg sm:p-6 md:p-4 p-2 sm:pt-10 md:pt-8 pt-6 cursor-pointer hover:ring-2 hover:ring-purple-600 transition bg-[#FAFBFF] w-full xs:w-[48%] lmd:w-[33%]">
+                    <p class="mt-4 flex items-baseline gap-x-1 ml-2">
+                        <span class="sm:text-4xl text-2xl font-medium tracking-tight text-[#300B60]">₼<span id="price"
+                                class="font-bold">5</span></span>
+                        <span id="time" class="text-sm font-semibold text-[#300B60] ml-2 sm:mt-1">/ay</span>
+                    </p>
+                    <div class="bg-white rounded-xl p-2 mt-3">
+                        <h2 class="text-[#300B60] sm:text-2xl text-lg font-bold px-1">Ekonomik</h2>
+                        <ul role="list" class="mt-8 space-y-3 text-sm/6 text-[#2F1C6A] sm:mt-10">
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">1</span> Domen
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">3 GB</span> Disk Həcmi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">3</span> E-mail Hesabı
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Premium müştəri dəstəyi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> SSL Təhlükəsizliyi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Yedəkləmə və bərpa
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">Limitsiz</span> Trafik
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Təhlükəsizlik Xüsusiyyətləri
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> cPanel
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> FTP Girişi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Fayl İdarəedici
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" aria-describedby="tier-enterprise"
+                        class="mt-8 block border border-[#A271F2] transition-all duration-200 rounded-3xl hover:bg-[#A271F2] px-3.5 py-2.5 text-center text-sm font-semibold hover:text-white shadow-xs bg-white text-[#A271F2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Sifariş
+                        et</a>
+                </div>
+                <div class="border-2 rounded-lg sm:p-6 md:p-4 p-2 cursor-pointer border-purple-600 transition bg-[#FAFBFF] w-full xs:w-[48%] lmd:w-[33%] relative z-2"
+                    style="box-shadow: rgba(139, 2, 117, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
+                    <div class="w-full flex justify-end items-end">
+                        <p class="bg-white px-3 py-2 rounded-2xl font-bold text-[#A271F2] text-xs">ƏN POPULYAR</p>
+                    </div>
+                    <p class="flex items-baseline gap-x-1 ml-2">
+                        <span class="sm:text-4xl text-2xl font-medium tracking-tight text-[#300B60]">₼
+                            <span id="price" class="font-bold">10</span>
+                        </span>
+                        <span id="time" class="text-sm font-semibold text-[#300B60] ml-2 sm:mt-1">/ay</span>
+                    </p>
+                    <div class="bg-white rounded-xl p-2 mt-3">
+                        <h2 class="text-[#300B60] sm:text-2xl text-lg font-bold px-1">Standart</h2>
+                        <ul role="list" class="mt-8 space-y-3 lmd:space-y-[14px] text-sm/6 text-[#2F1C6A] sm:mt-10">
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">2</span> Domen
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">8 GB</span> Disk Həcmi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">5</span> E-mail Hesabı
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Premium müştəri dəstəyi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> SSL Təhlükəsizliyi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Yedəkləmə və bərpa
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">Limitsiz</span> Trafik
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Təhlükəsizlik Xüsusiyyətləri
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> cPanel
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> FTP Girişi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Fayl İdarəedici
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" aria-describedby="tier-enterprise"
+                        class="mt-8 block border transition-all duration-200 border-[#A271F2] rounded-3xl bg-[#A271F2] px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-white hover:text-[#A271F2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Sifariş
+                        et</a>
+                </div>
+                <div
+                    class="ring-1 ring-gray-100 shadow-md rounded-lg sm:p-6 md:p-4 p-2 sm:pt-10 md:pt-8 pt-6 cursor-pointer hover:ring-2 hover:ring-purple-600 transition bg-[#FAFBFF] w-full xs:w-[48%] lmd:w-[33%]">
+                    <p class="mt-4 flex items-baseline gap-x-1 ml-2">
+                        <span class="sm:text-4xl text-2xl font-medium tracking-tight text-[#300B60]">₼<span id="price"
+                                class="font-bold">20</span></span>
+                        <span id="time" class="text-sm font-semibold text-[#300B60] ml-2 sm:mt-1">/ay</span>
+                    </p>
+                    <div class="bg-white rounded-xl p-2 mt-3">
+                        <h2 class="text-[#300B60] sm:text-2xl text-lg font-bold px-1">Professional</h2>
+                        <ul role="list" class="mt-8 space-y-3 text-sm/6 text-[#2F1C6A] sm:mt-10">
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">5</span> Domen
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">14 GB</span> Disk Həcmi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">Limitsiz</span> E-mail Hesabı
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Premium müştəri dəstəyi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> SSL Təhlükəsizliyi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Yedəkləmə və bərpa
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans">Limitsiz</span> Trafik
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Təhlükəsizlik Xüsusiyyətləri
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> cPanel
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> FTP Girişi
+                                </div>
+                            </li>
+                            <li class="flex gap-x-3">
+                                <svg class="h-6 w-5 flex-none text-green-600" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <div>
+                                    <span class="font-bold font-sans"></span> Fayl İdarəedici
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" aria-describedby="tier-enterprise"
+                        class="mt-8 block border border-[#A271F2] transition-all duration-200 rounded-3xl hover:bg-[#A271F2] px-3.5 py-2.5 text-center text-sm font-semibold hover:text-white shadow-xs bg-white text-[#A271F2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 sm:mt-10">Sifariş
+                        et</a>
+                </div>
+            </div>
+        </section>
+        <section id="startUpSec">
+            <div class="container max-w-[1300px] mx-auto py-20 ">
+                <div class="flex justify-between items-start xl:items-end flex-col xl:flex-row mx-5 gap-8">
+                    <div class="flex flex-col ">
+                        <span
+                            class="sm:text-[22px] sm:leading-[44px] tracking-[0.1px] text-[#2F1C6A] md:text-[42px] mb-2 font-bold ">
+                            Startuplar</span>
+                        <p class="md:text-xl xl:text-base text-sm tracking-[0.1px] sm:font-normal text-[#4a2182] ">
+                            Mütəxəssis məsləhətlərimizlə biznesinizi necə inkişaf etdirəcəyinizi öyrənin.</p>
+                    </div>
+                    <button type="button"
+                        class=" text-white bg-[#a271f2] hover:bg-[#7d3be2]  text-center rounded-[8px] px-3 h-10 tracking-[0.1px] font-semibold text-base "><span
+                            class=" flex flex-row flex-nowrap items-center gap-2">Bütün StartUplar
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" class="w-4 h-4 mt-[4px]">
+                                <path fill-rule="evenodd"
+                                    d="M10.21 14.77a.75.75 0 01.02-1.06L14.168 10 10.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                    clip-rule="evenodd"></path>
+                                <path fill-rule="evenodd"
+                                    d="M4.21 14.77a.75.75 0 01.02-1.06L8.168 10 4.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                    clip-rule="evenodd"></path>
+                            </svg></span></button>
+                </div>
+
+                <section class="grid grid-cols-1  lg:grid-cols-3 gap-10 pt-20  mx-5">
+                    <article
+                        class="overflow-hidden rounded-2xl transition-all duration-300  border-[#E4D7FD] border-1 lg:py-6 py-4 lg:px-6 px-4 bg-[#FAF4FF] md:w-[672px] md:mx-auto lg:w-full">
+                        <div class="aspect-[3/2] w-full rounded-2xl overflow-hidden relative"><img alt="" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full hover:scale-110 transition-all duration-300 rounded-lg cursor-pointer"
+                                src="https://api.websiteca.com/storage/edFyv3NmnHPNPEQTGjI94ZSjUQYoCzsfdmM36oP1.jpg"
+                                style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; color: transparent;">
+                        </div>
+                        <div class="px-2 flex flex-col justify-between sm:min-h-[172px] min-h-[130px]">
+                            <div>
+                                <h3
+                                    class="sm:mt-6 mt-3 text-lg font-semibold leading-8 truncate tracking-tight text-[#300B60]">
+                                    <a class="mt-6 sm:text-2xl text-lg ont-semibold leading-8 tracking-tight ttext-[#300B60]"
+                                        href="startups/saytaz">Sayt.az</a>
+                                </h3>
+                                <p class="xl:text-base text-xs leading-7 mt-2 line-clamp-2  text-[#4a2182]">Sayt.az
+                                    2004-cü
+                                    ildən fəaliyyətə başlamışdır. 2004-2016 -cı illər ərzində Azərbaycan bazarında bir
+                                    çox
+                                    ilklərə
+                                    imza atmışdır.</p>
+                            </div><a href="startups/saytaz"><button type="button"
+                                    class="py-2 px-4 mt-4 text-white bg-[#a271f2] hover:bg-[#7d3be2] active:bg-mainLightPurpleActive text-center rounded-[60px] btnLspace font-semibold opacity-100 text-sm md:text-base">
+                                    Ətraflı oxu...</button></a>
+                        </div>
+                    </article>
+                    <article
+                        class="overflow-hidden rounded-2xl transition-all duration-300  border-[#E4D7FD] border-1 lg:py-6 py-4 lg:px-6 px-4 bg-[#FAF4FF] md:w-[672px] md:mx-auto lg:w-full">
+                        <div class="aspect-[3/2] w-full rounded-2xl overflow-hidden relative"><img alt="" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full hover:scale-110 transition-all duration-300 rounded-lg cursor-pointer"
+                                src="https://api.websiteca.com/storage/FEJiun5EcIZrI9J7vYCrPZLqO0mjMU0YkDI7dfKO.png"
+                                style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; color: transparent;">
+                        </div>
+                        <div class="px-2 flex flex-col justify-between sm:min-h-[172px] min-h-[130px]">
+                            <div>
+                                <h3
+                                    class="sm:mt-6 mt-3 text-lg font-semibold leading-8 truncate tracking-tight text-[#300B60]">
+                                    <a class="mt-6 sm:text-2xl text-lg ont-semibold leading-8 tracking-tight ttext-[#300B60]"
+                                        href="startups/saytaz">telefon.az</a>
+                                </h3>
+                                <p class="xl:text-base text-xs leading-7 mt-2 line-clamp-2  text-[#4a2182]">Telefonların
+                                    online
+                                    alışı və satışı</p>
+                            </div><a href="startups/saytaz"><button type="button"
+                                    class="py-2 px-4 mt-4 text-white bg-[#a271f2] hover:bg-[#7d3be2] active:bg-mainLightPurpleActive text-center rounded-[60px] btnLspace font-semibold opacity-100 text-sm md:text-base">
+                                    Ətraflı oxu...</button></a>
+                        </div>
+                    </article>
+                    <article
+                        class="overflow-hidden rounded-2xl transition-all duration-300  border-[#E4D7FD] border-1 lg:py-6 py-4 lg:px-6 px-4 bg-[#FAF4FF] md:w-[672px] md:mx-auto lg:w-full">
+                        <div class="aspect-[3/2] w-full rounded-2xl overflow-hidden relative"><img alt="" loading="lazy"
+                                decoding="async" data-nimg="fill"
+                                class="h-full hover:scale-110 transition-all duration-300 rounded-lg cursor-pointer"
+                                src="https://api.websiteca.com/storage/BmIYrv23cj5kCPw8CiZ2DEJHuYvzxSB9yGnXH4Bf.png"
+                                style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: cover; color: transparent;">
+                        </div>
+                        <div class="px-2 flex flex-col justify-between sm:min-h-[172px] min-h-[130px]">
+                            <div>
+                                <h3
+                                    class="sm:mt-6 mt-3 text-lg font-semibold leading-8 truncate tracking-tight text-[#300B60]">
+                                    <a class="mt-6 sm:text-2xl text-lg ont-semibold leading-8 tracking-tight ttext-[#300B60]"
+                                        href="startups/saytaz">paracoin.network
+                                    </a>
+                                </h3>
+                                <p class="xl:text-base text-xs leading-7 mt-2 line-clamp-2  text-[#4a2182]">Para göndər
+                                    & qəbul
+                                    et, NFT Al & Sat, Ağıllı müqavilələr hazırla, Birja, Ödənişlər</p>
+                            </div><a href="startups/saytaz"><button type="button"
+                                    class="py-2 px-4 mt-4 text-white bg-[#a271f2] hover:bg-[#7d3be2] active:bg-mainLightPurpleActive text-center rounded-[60px] btnLspace font-semibold opacity-100 text-sm md:text-base">
+                                    Ətraflı oxu...</button></a>
+                        </div>
+                    </article>
+                </section>
+        </section>
+        <section id="statistikaSec">
+            <div
+                class="lg:mb-32 md:mb-16 mb-12 items-center bg-[#A271F2] relative w-full flex flex-col lg:!pt-24 lg:py-0 md:py-12 lsm:py-8 py-6 px-4 lg:px-0">
+                <h2
+                    class="sm:text-[22px] sm:leading-[44px] tracking-[0.1px] sm:text-center md:text-[32px] font-medium text-white leading-[38px] p-0">
+                    Statistikalarımız</h2>
+                <div
+                    class="flex flex-col gap-4 text-center mt-4 lg:flex-row lg:gap-0 lg:translate-y-[50%] shadow-md max-w-7xl">
+                    <div
+                        class="text-[#4A2182] bg-white xl:max-w-[20rem] lg:w-[16rem] w-full lsm:py-8 py-4 md:px-12 lsm:px-8 px-4 lg:rounded-none rounded-lg  ">
+                        <h3 class="md:text-2xl text-xl font-bold">20+ il</h3>
+                        <p class="text-sm mt-2 whitespace-nowrap">Biz Təcrübəmizə Güvənirik</p>
+                    </div>
+                    <div
+                        class="text-[#4A2182] bg-white xl:max-w-[20rem] lg:w-[16rem] w-full lsm:py-8 py-4 md:px-12 lsm:px-8 px-4 lg:rounded-none rounded-lg  ">
+                        <h3 class="md:text-2xl text-xl font-bold">1000+</h3>
+                        <p class="text-sm mt-2 whitespace-nowrap">Məmnun Müştərilər</p>
+                    </div>
+                    <div
+                        class="text-[#4A2182] bg-white xl:max-w-[20rem] lg:w-[16rem] w-full lsm:py-8 py-4 md:px-12 lsm:px-8 px-4 lg:rounded-none rounded-lg  ">
+                        <h3 class="md:text-2xl text-xl font-bold">200+</h3>
+                        <p class="text-sm mt-2 whitespace-nowrap">Tamamlanan Layihələr</p>
+                    </div>
+                    <div
+                        class="text-[#4A2182] bg-white xl:max-w-[20rem] lg:w-[16rem] w-full lsm:py-8 py-4 md:px-12 lsm:px-8 px-4 lg:rounded-none rounded-lg  ">
+                        <h3 class="md:text-2xl text-xl font-bold">25+</h3>
+                        <p class="text-sm mt-2 whitespace-nowrap">Peşəkarlar Komandası</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="team" class="md:pb-32  w-full mt-6 px-2">
+            <h2 class="sm:text-[22px] text-lg text-[#300B60] md:text-[32px] text-center font-bold">Komandamızın Pərdə
+                Arxası</h2>
+            <h4 class="text-base text-[#4A2182] text-sans md:text-xl text-center font-semibold mt-2 mb-12">Komandamızla
+                Tanış Olaq</h4>
+            <div class="w-full flex flex-wrap gap-4 px-2 mx-auto max-w-[1296px] justify-center">
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/Cup5kWbVIA9nfp4TN5w9ecGRkQUkhfVh8umVITKe.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px] w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Ramil Mirzayev</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">CEO</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/uTGbFRppma9BB7BTTYffzFgy8m1MfQEa7RkNdAVe.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px] w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Rasim Adurahman</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Project Manager</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/cMDfFJGRPFXHH8bqJc6CXw5RT6RbYOjHDmmAhvq4.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Ahmad Rustamov</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Team Lead</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/4RIXyEhwxrU4nkxG2MUT2NqxZk0byqD4W7VyvnRf.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Murad Aghamedov</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Backend Developer</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/S3chfzTRjo3ykhVY7JaRbRNbJ28LVeXA1duP7YAN.png"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Fuad Mammadov</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Front-End Developer</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/8imyJH3yz86nxrP3fTkAfq9faXyfrPhLMsD5nWvm.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Mirafgan Eminbayli</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Front-End Developer</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/UFeJ0M6cDGYTUcdTSz79BOYyuQMUIU5NWfhk2wuv.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Idrak Mustafazada</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Customer Support</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/k6AiYFMXvZ3HIpwTdQAZiHZMyjeOnGQ8TpZY4VTz.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Saida Chinani</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">SMM</h3>
+                    </div>
+                </div>
+                <div class="border-2 border-[#A271F2] sm:rounded-[30px] rounded-[24px] sm:p-4 p-2 w-fit">
+                    <img src="https://api.websiteca.com/storage/souFthYY1tpKeJKs20LqEqbjGvT1pxAZ5OBCtr1u.jpg"
+                        alt="Ramil Mirzayev"
+                        class="sm:w-[224px]  w-[150px]  mx-auto md:h-[250px] sm:h-[230px] h-[200px] relative bottom-0 z-10 object-cover rounded-[14px]">
+                    <div
+                        class="flex flex-col gap-1 justify-center items-center bg-white relative z-10 rounded-2xl -translate-y-4 sm:w-[224px]  w-[150px]  mx-auto pt-4">
+                        <h2 class="text-[#300B60] sm:text-xl text-base font-bold">Matanat M.</h2>
+                        <h3 class="text-[#4A2182] text-sm font-bold text-center">Front End Developer</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sonIsSec" class="px-4 mx-auto mt-8 relative overflow-hidden">
+            <div>
+                <h2 class="sm:text-[22px] text-lg text-[#300B60] md:text-[32px] text-center font-bold">Son İşlərimiz
+                </h2>
+                <h4 class="text-base text-[#4A2182] text-sans md:text-xl text-center font-semibold mt-2 mb-12">
+                    Paylaşmaqdan Qürur Duyuruq</h4>
+            </div>
+            <div id="islerDiv"
+                class="flex flex-wrap justify-center gap-x-6 md:gap-y-[62px] lsm:gap-y-[30px] gap-y-4 md:mb-20 lsm:mb-12 mb-8">
+
+            </div>
+            <ul class="flex justify-center items-center lg:mt-[4rem] mt-4 lg:mb-[8rem] mb-8">
+                <li onclick="deyis('0')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid hover:bg-purple-600 hover:text-white active:bg-[#A271F2] place-items-center m-1 disabled">
+                    < </li>
+                <li onclick="deyis('1')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid place-items-center m-1 hover:bg-purple-600 hover:text-white active:bg-[#A271F2] transition selected">
+                    1 </li>
+                <li onclick="deyis('2')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid place-items-center m-1 hover:bg-purple-600 hover:text-white active:bg-[#A271F2] transition">
+                    2 </li>
+                <li onclick="deyis('3')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid place-items-center m-1 hover:bg-purple-600 hover:text-white active:bg-[#A271F2] transition">
+                    3 </li>
+                <li onclick="deyis('4')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid place-items-center m-1 hover:bg-purple-600 hover:text-white active:bg-[#A271F2] transition">
+                    4 </li>
+                <li onclick="deyis('5')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid place-items-center m-1 hover:bg-purple-600 hover:text-white active:bg-[#A271F2] transition">
+                    5 </li>
+                <li onclick="deyis('6')"
+                    class="border border-grey-200 w-10 h-10 cursor-pointer rounded-lg text-slate-400 grid hover:bg-purple-600 hover:text-white active:bg-[#A271F2] place-items-center m-1 disabled">
+                    > </li>
+            </ul>
+            <div class="absolute xl:top-115 top-96 -rotate-12 -z-10 -left-10">
+                <div class="bg-[#D6BBFB] lg:h-[60px] h-[40px] w-[2000px]"></div>
+                <div class="bg-[#E9D7FE] lg:h-[60px] h-[40px] w-[2000px]"></div>
+                <div class="bg-[#F4EBFF] lg:h-[60px] h-[40px] w-[2000px]"></div>
+            </div>
+        </section>
+        <section id="swiperSec" class="max-w-7xl mx-auto sm:pb-32 pb-16 px-2">
+            <div class="flex flex-col mx-auto justify-center items-center gap-2 mb-12">
+                <h2 class="sm:text-[22px] text-lg text-[#300B60] md:text-[32px] text-center font-bold leaeding-[38px]">
+                    Müştərilərimizin Rəyləri</h2>
+                <p class="text-base text-[#4A2182] text-sans md:text-xl text-center font-semibold">Müştərilərin
+                    fikirləri</p>
+            </div>
+            <div id="allSwiper">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="flex flex-col gap-5 py-[70px] lg:py-20 border rounded-lg">
+                                <h2 class="text-[#4A2182] font-semibold text-xl text-center">Müştərilərdən müsbət rəy
+                                </h2>
+                                <p class="text-slate-500 mt-2  px-6 text-center w-[90%] mx-auto">Sayt.az saytımın
+                                    hazırlanmasında gözləntilərimi aşdı. Mənim istəklərimi mükəmməl
+                                    şəkildə əks etdirdi.</p>
+                                <div class="flex justify-center gap-4">
+                                    <img src="https://api.websiteca.com/storage/kBaPiZJ8SftpeTvCglQ9wTUC7BunjjhvfPKv3e2P.png"
+                                        alt="photo" class="rounded-full" width="50" height="50">
+                                    <div class="flex flex-col items-start gap-2">
+                                        <h2 class="text-base font-semibold leading-5 tracking-tight text-slate-700">
+                                            Seljan Novruz</h2>
+                                        <span class="text-base leading-5 text-slate-500">CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex flex-col gap-5 py-[70px] lg:py-20 border rounded-lg">
+                                <h2 class="text-[#4A2182] font-semibold text-xl text-center">Müştərilərdən müsbət rəy
+                                </h2>
+                                <p class="text-slate-500 mt-2  px-6 text-center w-[90%] mx-auto">Veb saytımı hazırlamaq
+                                    üçün Sayt.az-ı seçmək biznesim üçün verdiyim ən yaxşı qərar idi.</p>
+                                <div class="flex justify-center gap-4">
+                                    <img src="https://api.websiteca.com/storage/WAUSkNOdjK5fUxWQs2x7jOeOr4f0WZIgumqqhb31.png"
+                                        alt="photo" class="rounded-full" width="50" height="50">
+                                    <div class="flex flex-col items-start gap-2">
+                                        <h2 class="text-base font-semibold leading-5 tracking-tight text-slate-700">
+                                            Hikmat Taghiyev</h2>
+                                        <span class="text-base leading-5 text-slate-500">CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="flex flex-col gap-5 py-[70px] xl::py-20 border rounded-lg">
+                                <h2 class="text-[#4A2182] font-semibold text-xl text-center">Müştərilərdən müsbət rəy
+                                </h2>
+                                <p class="text-slate-500 mt-2  px-6 text-center w-[90%] mx-auto">Sayt.az komandası
+                                    tərəfindən hazırlanan ev alqı-satqısı saytı, gözləntilərimi tamamilə doğrultdu.
+                                    Sayt.az-a dəyərli xidmətləri üçün təşəkkür edirəm.</p>
+                                <div class="flex justify-center gap-4">
+                                    <img src="https://api.websiteca.com/storage/t6bTFdGMt22ImMHtBk82gD3DTDg0cQ9jMUuljIEW.png"
+                                        alt="photo" class="rounded-full" width="50" height="50">
+                                    <div class="flex flex-col items-start gap-2">
+                                        <h2 class="text-base font-semibold leading-5 tracking-tight text-slate-700">
+                                            Bahman Ahmadlı</h2>
+                                        <span class="text-base leading-5 text-slate-500">CEO</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+        <section id="bloqSec">
+            <div class="container mx-auto px-4 py-8 max-w-7xl">
+                <div class="text-center mb-12">
+                    <h1 class="sm:text-[22px] md:text-[32px] font-bold text-[#300B60] mb-4">Bloqumuza daxil olun</h1>
+                    <p class="font-medium text-[#4A2182]">Vebin İnkişafı, Dizaynı və Onlayn Strategiyaları ilə bağlı
+                        maraqlı məqalələri kəşf edin</p>
+                </div>
+
+                <div class="grid grid-cols-1 lmd:grid-cols-2 xl:grid-cols-3 gap-6 mb-10">
+
+                    <div
+                        class="bg-purple-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-purple-500">
+                        <div class="p-4">
+                            <img src="https://api.websiteca.com/storage/F9fi8pQIutOxgHSQBQdOz3IYGZjHvpCjPMyeKbWQ.jpg"
+                                alt="Web Trends" height="296"
+                                class="w-full h-full object-contain aspect-video rounded-md">
+                            <h2 class="text-xl font-bold text-slate-700 min-h-[56px] my-7">Uğurlu biznes üçün hansı veb
+                                trendləri izləməlisən?</h2>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    Feb 27, 2025</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    webdesign</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    marketing</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    sayt</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-purple-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-purple-500">
+                        <div class="p-4">
+                            <img src="https://api.websiteca.com/storage/DUPcyTWGCtnRzHz9801ms8fDZWbMUsRIoErzIdyW.jpg"
+                                alt="DeepSeek" height="296"
+                                class="w-full h-full object-contain aspect-video rounded-md">
+                            <h2 class="text-xl font-bold text-slate-700 min-h-[56px] my-7">DeepSeek AI: Yeni Nəsil Süni
+                                İntellekt Aləti</h2>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    Feb 6, 2025</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    sayt yaratmaq</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    sayt sifarişi</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    saytların hazırlanması</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-purple-50 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-purple-500">
+                        <div class="p-4">
+                            <img src="https://api.websiteca.com/storage/numKcPzot4A6JVvsEvxWnmTKm1LRLr3svtTxTDU5.jpg"
+                                alt="Online Business Trends" height="296"
+                                class="w-full h-full object-contain aspect-video rounded-md">
+                            <h2 class="text-xl font-bold text-slate-700 min-h-[56px] my-7">2025-ci ildə Onlayn Biznesin
+                                Trendləri</h2>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    Jan 29, 2025</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    marketing</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    social</p>
+                                <p
+                                    class="bg-[#A271F2] text-white px-4 h-8 flex justify-center items-center rounded-lg text-sm">
+                                    peşəkar veb dizayn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mx-auto w-1/2 xs:w-1/4 mb-20 text-center">
+                    <button
+                        class="py-3 text-white bg-[#A271F2] hover:bg-purple-600 text-center rounded-lg w-full font-semibold">Bütün
+                        Bloqlar</button>
+                </div>
+            </div>
+        </section>
+        <section id="videoSec" class="mx-auto max-w-7xl px-4">
+            <div class="mx-auto max-w-2xl text-center mt-5 mb-10">
+                <h2 class="sm:text-[22px] text-[#300B60] md:text-[32px] font-bold text-center">Videolarımızı Kəşf Edin
+                </h2>
+                <h4 class="sm:text-base mt-2 text-[#4A2182] text-xl text-center font-medium px-1">Kəşf Edin, Öyrənin və
+                    Uğur Qazanın</h4>
+                <p class="sm:text-base mt-2 text-[#4A2182] text-xl text-center font-medium px-1">Son nailiyyətlərimizi,
+                    media çıxışlarımızı və ətraflı təlimlərimizi izləmək üçün video kolleksiyamıza göz atın. İdeal veb
+                    saytınızı qurmaqda sizə necə kömək edə biləcəyimizi öyrənin və uğur hekayəmizdən ilham alın.</p>
+            </div>
+            <div id="allSwiper">
+                <div class="swiper mySwiper2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/lnpAcQS6Xz4?si=OfrIPc-Srrmy5yu1"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="swiper-slide">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/qO5qcQgiNX4?si=ZeGWv9JTnj7yYY-e"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="swiper-slide">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/Y4cRx19nhJk?si=SocqvZ-kYamvQyIA"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-[#FAF4FF] w-full mx-auto border-t-[1px] mt-12 border-slate-200 border-solid text-[#4A2182]">
+        <div
+            class="px-4 flex-col gap-[30px] lmd:flex-row mx-auto max-w-[1296px] flex lmd:items-center justify-between lg:gap-[61px] lg:py-20 md:py-10 py-6 p-2">
+            <div class="pt-[72px] md:pt-0 flex flex-col gap-8 md:items-start lmd:w-1/2">
+                <a class="-m-1.5 p-1.5 min-w-[70px]" href="index.html">
+                    <img src="img/saytaz.svg" alt="logo" width="200">
+                </a>
+                <p class="text-base md:text-sm leading-6 max-w-[456px] md:max-h-[130px] mb-10">Sayt.az - Web saytların
+                    hazırlanması, Domain, Hosting satışı, SEO, SMM və texniki xidmətlər təklif edir.</p>
+                <div>
+                    <p class="font-bold mb-4">Bizi izləyin :</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-col md:flex-row gap-12 flex lg:gap-[61px] lmd:w-1/2">
+                <div>
+                    <ul class="flex flex-col gap-4">
+                        <li class="mb-0 md:mb-8 text-[#300B60] font-bold sm:text-2xl text-lg uppercase">Hostinq & Domen
+                        </li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Domen</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Veb Hostinq</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">VPS Hostinq</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Server</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="flex flex-col gap-4">
+                        <li class="mb-0 md:mb-8 text-[#300B60] font-bold sm:text-2xl text-lg uppercase">Şirkət</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Haqqımızda</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Əlaqə</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Bloq</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Portfolio</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div
+            class="flex-col pb-2 md:pb-0 lmd:flex-row-reverse w-full max-w-[1296px] flex justify-between lmd:items-center items-start mx-auto px-4 border-t border-slate-200 lg:pt-[31px] lg:pb-[22px]">
+            <div
+                class="py-4 flex-col md:flex-row gap-2 text-[16px] flex md:text-base lmd:items-center items-start justify-between md:gap-[16px]">
+                <div class="flex gap-[8px] justify-center items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <p class="whitespace-nowrap">+(99470) 330-00-04</p>
+                </div>
+                <div class="hidden md:block min-h-[24px] w-[1px] bg-slate-200"></div>
+                <div class="flex gap-[8px] sm:justify-center items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>support@sayt.az</p>
+                </div>
+            </div>
+            <p class="border-t border-slate-200 pt-3 mx-auto md:mx-0 md:border-0 md:p-0 w-full leading-5 lg:h-[10px] ">
+                © Copyright 2004-2025 © Sayt.az. Bütün Hüquqlar Qorunur.
+            </p>
+        </div>
+    </footer>
+    <script src="script/data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const menuDivs = document.querySelectorAll('#navbarMenu div')
+        const menuUl = document.querySelectorAll('#navbarMenu ul')
+
+        function scrollToSection() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth"
+            });
+        }
+        function showMenu(arg) {
+            document.getElementById("currencyMenu").classList.add("hidden")
+            document.getElementById("languageMenu").classList.add("hidden")
+
+            if (menuUl[arg].classList.contains("hidden")) {
+                menuUl.forEach((ul, i) => {
+                    if (i !== arg) ul.classList.add("hidden")
+                });
+                menuDivs.forEach((div, i) => {
+                    if (i !== arg) div.innerHTML = ""
+                });
+                menuData[arg].forEach(item => {
+                    menuDivs[arg].innerHTML += `
+            <a href="${item.title == 'Sayt Kalkulyatoru' ? 'calc.html' : '#'}">
+                <div onclick="navMenu()" class="flex flex-row gap-4 hover:bg-slate-50 px-8 py-3 bg-white">
+                    <div class="p-3 bg-blue-100 rounded-lg max-w-[52px] max-h-[52px]">
+                        <img src="${item.url}" alt="photo" width="28" height="28">
+                    </div>
+                    <div>
+                        <h2 class="text-slate-900 font-medium text-base lg:w-max">${item.title}</h2>
+                        <p class="text-slate-500 md:text-sm text-xs">${item.description}</p>
+                    </div>
+                </div>
+            </a> 
+            `})
+
+                menuUl[arg].classList.remove("hidden")
+            } else {
+                menuDivs[arg].innerHTML = ""
+                menuUl[arg].classList.add("hidden")
+            }
+        }
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest("#navbarMenu li") && !event.target.closest("#navbarMenu ul")) {
+                closeNavMenus()
+            }
+        })
+        document.addEventListener("click", function (event) {
+            const currencyContainer = event.target.closest(".currency-container")
+            const languageContainer = event.target.closest(".language-container")
+
+            if (!currencyContainer) {
+                document.getElementById("currencyMenu").classList.add("hidden")
+            }
+
+            if (!languageContainer) {
+                document.getElementById("languageMenu").classList.add("hidden")
+            }
+        });
+        function navMenu() {
+            closeNavMenus()
+        }   
+        function currencyMenu() {
+            const currencyMenu = document.getElementById("currencyMenu")
+            const languageMenu = document.getElementById("languageMenu")
+            languageMenu.classList.add("hidden")
+            currencyMenu.classList.toggle("hidden")
+            closeNavMenus()
+            if (document.getElementById("selectedCurrency").innerHTML == "₼") {
+                document.getElementById("manat").classList.add("bg-gray-100")
+                document.getElementById("dollar").classList.remove("bg-gray-100")
+            }
+            else {
+                document.getElementById("dollar").classList.add("bg-gray-100")
+                document.getElementById("manat").classList.remove("bg-gray-100")
+            }
+        }
+
+        function selectCurrency(currency) {
+            document.getElementById("selectedCurrency").innerText = currency
+            document.getElementById("currencyMenu").classList.add("hidden")
+        }
+        function languageMenu() {
+            const languageMenu = document.getElementById("languageMenu")
+            const currencyMenu = document.getElementById("currencyMenu")
+            currencyMenu.classList.add("hidden")
+            languageMenu.classList.toggle("hidden")
+            closeNavMenus()
+            if (document.getElementById("selectedLanguage").src == document.querySelector("#az img").src) {
+                document.getElementById("az").classList.add("bg-gray-100")
+                document.getElementById("usa").classList.remove("bg-gray-100")
+            }
+            else {
+                document.getElementById("usa").classList.add("bg-gray-100")
+                document.getElementById("az").classList.remove("bg-gray-100")
+            }
+        }
+
+        function selectLanguage(lang) {
+            document.getElementById("selectedLanguage").src = document.querySelector(`#${lang} img`).src
+            document.getElementById("languageMenu").classList.add("hidden")
+        }
+        function closeNavMenus() {
+            menuDivs.forEach(div => div.innerHTML = "")
+            menuUl.forEach(ul => ul.classList.add("hidden"))
+        }
+        function openSidebar() {
+            document.getElementById("sidebarMenu").classList.remove("translate-x-full")
+        }
+        function closeSidebar() {
+            document.getElementById("sidebarMenu").classList.add("translate-x-full")
+        }
+        const sidebarMenuDivs = document.querySelectorAll('#sidebarNavMenu div')
+        const sidebarMenuUl = document.querySelectorAll('#sidebarNavMenu ul')
+
+        function showSidebarMenu(arg) {
+            if (sidebarMenuUl[arg].classList.contains("hidden")) {
+                sidebarMenuUl.forEach((ul, i) => {
+                    if (i !== arg) ul.classList.add("hidden")
+                });
+                sidebarMenuDivs.forEach((div, i) => {
+                    if (i !== arg) div.innerHTML = ""
+                });
+                menuData[arg].forEach(item => {
+                    sidebarMenuDivs[arg].innerHTML += `
+            <a href="${item.title == 'Sayt Kalkulyatoru' ? 'calc.html' : '#'}">
+                <div onclick="closeSidebar()" class="flex flex-row gap-4 hover:bg-slate-50 px-4 py-3 bg-white">
+                    <div class="p-2 bg-blue-100 rounded-lg max-w-[40px] max-h-[40px]">
+                        <img src="${item.url}" alt="photo" width="20" height="20">
+                    </div>
+                    <div>
+                        <h2 class="text-slate-900 font-medium text-base">${item.title}</h2>
+                        <p class="text-slate-500 text-sm">${item.description}</p>
+                    </div>
+                </div>
+            </a> 
+            `});
+
+                sidebarMenuUl[arg].classList.remove("hidden")
+            } else {
+                sidebarMenuDivs[arg].innerHTML = ""
+                sidebarMenuUl[arg].classList.add("hidden")
+            }
+        }
+        document.addEventListener("click", function (event) {
+            const sidebarMenu = document.getElementById("sidebarMenu")
+            const hamburgerButton = event.target.closest("button[onclick='openSidebar()']")
+
+            if (!event.target.closest("#sidebarMenu") && !hamburgerButton &&
+                !sidebarMenu.classList.contains("translate-x-full")) {
+                closeSidebar();
+            }
+        })
+        function illik() {
+            let price = document.querySelectorAll("#price")
+            let time = document.querySelectorAll("#time")
+            let ayliq = document.getElementById("ayliq")
+            let illik = document.getElementById("illik")
+            illik.style.backgroundColor = "#A271F2"
+            illik.style.color = "white"
+            ayliq.style.backgroundColor = "white"
+            ayliq.style.color = "#94A3B8"
+            price[0].innerHTML = "60"
+            price[1].innerHTML = "120"
+            price[2].innerHTML = "240"
+            for (i = 0; i < 3; i++) {
+                time[i].innerHTML = "/il"
+            }
+
+        }
+        function ayliq() {
+            let price = document.querySelectorAll("#price")
+            let time = document.querySelectorAll("#time")
+            let ayliq = document.getElementById("ayliq")
+            let illik = document.getElementById("illik")
+            ayliq.style.backgroundColor = "#A271F2"
+            ayliq.style.color = "white"
+            illik.style.backgroundColor = "white"
+            illik.style.color = "#94A3B8"
+            price[0].innerHTML = "5"
+            price[1].innerHTML = "10"
+            price[2].innerHTML = "20"
+            for (i = 0; i < 3; i++) {
+                time[i].innerHTML = "/ay"
+            }
+        }
+        function uzanti(arg) {
+            let select = document.getElementById("selDomen")
+            select.value = arg
+            let inp = document.getElementById("inpDomen")
+            if (inp.value == "") {
+                document.getElementById("domenWarn").innerHTML = "*Domen adı düzgün deyil.Domen adında yalnız hərf, rəqəm və '-' işarəsi ola bilər"
+            }
+        }
+        const letters = [
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+        ];
+        const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        function domen() {
+            let inp = document.getElementById("inpDomen")
+            let warning = document.getElementById("domenWarn")
+            warning.innerHTML = ""
+            if (inp.value.length == 0) {
+                warning.innerHTML = "*Domen adı düzgün deyil.Domen adında yalnız hərf, rəqəm və '-' işarəsi ola bilər"
+            }
+            else if (inp.value.length < 3) {
+                warning.innerHTML = "*Domen adının uzunluğu ən az 3 olmalıdır"
+            }
+            else {
+                for (let i = 0; i < inp.value.length; i++) {
+                    if (inp.value[0] == "-" || inp.value[inp.value.length - 1] == "-") {
+                        warning.innerHTML = "*Domen adı düzgün deyil.Domen adında yalnız hərf, rəqəm və '-' işarəsi ola bilər"
+                    }
+                    else if (!letters.includes(`${inp.value[i]}`) && !numbers.includes(`${inp.value[i]}`) && inp.value[i] != "-") {
+                        warning.innerHTML = "*Domen adı düzgün deyil.Domen adında yalnız hərf, rəqəm və '-' işarəsi ola bilər"
+
+                    }
+                }
+            }
+        }
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        var swiper2 = new Swiper(".mySwiper2", {
+            slidesPerView: 2,
+            spaceBetween: 0,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                980: {
+                    slidesPerView: 2
+                },
+                0: {
+                    slidesPerView: 1
+                    
+                }
+            }
+        });
+        let islerDiv = document.getElementById("islerDiv")
+        let deyisArr = []
+        deyis('1')
+        function deyis(arg) {
+            if (arg >= 1 && arg <= 5) {
+                deyisArr.push(arg)
+            }
+            islerDiv.innerHTML = ""
+            let li = document.querySelectorAll("#sonIsSec li")
+            for (i = 1; i < 6; i++) {
+                if (i == arg) {
+                    li[i].classList.add("bg-[#A271F2]", "text-white");
+                    li[i].classList.remove("bg-white", "text-slate-400");
+                } else {
+                    li[i].classList.remove("bg-[#A271F2]", "text-white");
+                    li[i].classList.add("bg-white", "text-slate-400");
+                }
+            }
+            let x = 0
+            let y = 0
+            if (arg == 0) {
+                if (deyisArr[deyisArr.length - 1] == "1") {
+                    arg = 1
+                    li[1].classList.add("bg-[#A271F2]", "text-white");
+                    li[1].classList.remove("bg-white", "text-slate-400");
+                }
+                else {
+                    arg = +deyisArr[deyisArr.length - 1] - 1
+                    deyisArr.push(arg)
+                    li[arg].classList.add("bg-[#A271F2]", "text-white");
+                    li[arg].classList.remove("bg-white", "text-slate-400");
+                }
+            }
+
+            if (arg == 6) {
+                if (deyisArr[deyisArr.length - 1] == "5") {
+                    arg = 5
+                    li[5].classList.add("bg-[#A271F2]", "text-white");
+                    li[5].classList.remove("bg-white", "text-slate-400");
+                }
+                else {
+                    arg = +deyisArr[deyisArr.length - 1] + 1
+                    deyisArr.push(arg)
+                    li[arg].classList.add("bg-[#A271F2]", "text-white");
+                    li[arg].classList.remove("bg-white", "text-slate-400");
+                }
+            }
+            if (arg >= 1 && arg <= 4) {
+                y = arg * 6
+                x = (arg - 1) * 6
+            }
+            else if (arg == 5) {
+                x = (arg - 1) * 6
+                y = x + 2
+            }
+            islerimiz.slice(x, y).forEach(item => {
+                islerDiv.innerHTML +=
+                    `
+        <div class="h-fit p-6 bg-[#FAF4FF] rounded-[30px] border-2 border-[#E4D7FD] w-full md:w-[48%] max-w-[515px] md:max-w-[636px]">
+            <img src="${item.url}" alt="sites" width="608" height="360" class="w-full xl:h-[380px] lg:h-[320px] md:h-[240px] sm:h-[200px] h-[120px] object-contain rounded-[15px]">
+            <h2 class="xmd2:text-xl text-sm font-semibold text-[#300B60] pt-6">${item.ad}</h2>
+        </div>
+        `
+            })
+        }
+    </script>
+</body>
+
+</html>

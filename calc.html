@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saytın Qiymətini Hesabla | Sayt Qiymət Kalkulyatoru</title>
+    <link rel="shortcun icon" href="img/icon.ico">
+    <link rel="stylesheet" href="style/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header class="bg-white sticky top-0 z-50">
+        <nav class="py-[24px] px-[28px] flex justify-between items-center">
+            <a href="index.html"><img src="img/saytaz.svg" alt="logo" width="114" height="32"></a>
+            <menu id="navbarMenu" class="hidden lg:flex lg:gap-x-6 2xl:gap-x-[60px] items-center">
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('0')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Veb Sayt</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-150px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('1')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Domen</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-100px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('2')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Hostinq</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-100px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('3')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Xidmətlər</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-100px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+                <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative">
+                    <h2 onclick="showMenu('4')" class="flex items-center hover:text-[#7D3BE2]">
+                        <p>Şirkət</p>
+                        <i class="fa-solid fa-chevron-down text-xs pl-2"></i>
+                    </h2>
+
+                    <ul class="hidden">
+                        <div class="absolute top-10 left-[-200px] border flex flex-col py-3 rounded-lg min-w-max">
+                        </div>
+                    </ul>
+                </li>
+            </menu>
+            <div class="flex items-center gap-5">
+                <div class="flex items-center gap-4 ml-5 xl:ml-0">
+                    <div class="relative currency-container">
+                        <div onclick="currencyMenu()" class="flex items-center cursor-pointer">
+                            <p id="selectedCurrency" class="text-2xl">₼</p>
+                            <i
+                                class="fa-solid fa-chevron-down text-sm pl-5 text-gray-300 hover:text-slate-400 transition delay-100 duration-100"></i>
+                        </div>
+                        <ul id="currencyMenu" class="absolute left-0 mt-2 bg-white border rounded h-16 w-16 hidden">
+                            <li onclick="selectCurrency('$')" id="dollar" class="cursor-pointer text-center text-lg">$
+                            </li>
+                            <li onclick="selectCurrency('₼')" id="manat"
+                                class="cursor-pointer mt-[3px] text-center text-lg">₼
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative language-container">
+                        <div onclick="languageMenu()" class="flex items-center cursor-pointer">
+                            <img id="selectedLanguage" class="cover" src="img/Flag_of_Azerbaijan.png" alt="flag"
+                                width="30" height="40">
+                            <i
+                                class="fa-solid fa-chevron-down text-sm pl-5 text-gray-300 hover:text-slate-400 transition delay-100 duration-100"></i>
+                        </div>
+                        <ul id="languageMenu" class="absolute left-0 mt-4 bg-white border rounded h-16 w-16 hidden">
+                            <li onclick="selectLanguage('usa')" id="usa"
+                                class="cursor-pointer flex items-center justify-center mt-[3px] p-1">
+                                <img src="img/usa_flag.webp" alt="flag" width="30" height="40">
+                            </li>
+                            <li onclick="selectLanguage('az')" id="az"
+                                class="cursor-pointer mt-[3px] flex items-center justify-center p-1.5">
+                                <img src="img/Flag_of_Azerbaijan.png" alt="flag" width="30" height="40">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="hidden xl:flex pl-1 gap-4">
+                        <button id="qiymet"
+                            class="border text-white py-2 px-6 rounded-lg text-center font-semibold">Qiymət Təklifi
+                            Al</button>
+                        <button
+                            class="border text-[#A271F2] border-[#A271F2] py-2 px-5 rounded-lg text-center font-semibold">Daxil
+                            olun</button>
+                    </div>
+                </div>
+                <div class="xl:hidden">
+                    <button onclick="openSidebar()"><i class="fa-solid fa-bars text-lg text-gray-600"></i></button>
+                </div>
+                <div id="sidebarMenu"
+                    class="fixed top-0 right-0 max-w-[400px] w-full h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+                    <button onclick="closeSidebar()" class="absolute top-4 right-4 text-gray-600 text-xl"><i
+                            class="fa-solid fa-xmark"></i></button>
+                    <menu id="sidebarNavMenu" class="flex flex-col lg:hidden items-start pt-12 px-6 space-y-4">
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('0')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Veb Sayt</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('1')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Domen</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('2')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Hostinq</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('3')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Xidmətlər</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="text-[#300B60] font-bold font-manrope text-base cursor-pointer relative w-full">
+                            <h2 onclick="showSidebarMenu('4')"
+                                class="flex items-center gap-2 hover:text-[#7D3BE2] py-2">
+                                <p>Şirkət</p>
+                                <i class="fa-solid fa-chevron-down text-xs"></i>
+                            </h2>
+                            <ul class="hidden w-full">
+                                <div class="flex flex-col py-2 w-full">
+                                </div>
+                            </ul>
+                        </li>
+                    </menu>
+                    <div class="mt-8 lg:mt-16 px-6 flex flex-col space-y-3">
+                        <button id="qiymet" class="bg-[#A271F2] text-white py-2 px-6 rounded-lg font-semibold">Qiymət
+                            Təklifi Al</button>
+                        <button class="border border-[#A271F2] text-[#A271F2] py-2 px-5 rounded-lg font-semibold">Daxil
+                            olun</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="md:w-4/5 w-full mx-auto mt-4 bg-[#f5f5f5]">
+        <div class="flex lmd:flex-row flex-col md:gap-6 gap-2 pb-12 mt-2 px-2 py-6 relative">
+            <div class="lmd:w-2/3 w-full bg-white p-4 flex flex-col">
+                <h1 class="!text-5xl lmd:text-4xl font-bold mt-4 mb-12">Qiymət Təklifi Al</h1>
+                <div>
+                    <h3 class="text-[#212529] text-lg font-medium">Statik səhifələr</h3>
+                    <div class="bg-[#f8f8fa] mt-2 rounded-md  overflow-hidden flex flex-col gap-4 inps1">
+                        <div class="flex flex-col gap-4 mt-4 px-4 py-2">
+                            <p>Neçə statik səhifə olacaq?</p>
+                            <div class="flex justify-between items-center">
+                                <span
+                                    class="bg-purple-400 text-white flex xs:w-8 w-6 xs:h-8 h-6 xs:text-base text-sm items-center justify-center rounded-md">1</span>
+                                <input type="range"
+                                    class="w-10/12 h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-400 outline-none"
+                                    min="1" max="20" step="1" value="4" data-price="100" onchange="rangePrice(this)">
+                                <span
+                                    class="bg-purple-400 text-white flex xs:w-8 w-6 xs:h-8 h-6 xs:text-base text-sm items-center justify-center rounded-md">20</span>
+                            </div>
+                        </div>
+                        <div class="flex xs:flex-row flex-col xs:justify-between xs:items-center gap-x-2 px-4 py-2">
+                            <p>Dizayn mürəkkəblik :</p>
+                            <div class="flex flex-col justify-center gap-4 xs:w-4/6 w-full xs:mt-0 mt-4">
+                                <div
+                                    class="flex justify-between items-center text-base xs:gap-x-0 gap-x-4 xs:pr-4 pr-0">
+                                    <p>Sadə</p>
+                                    <p>Orta</p>
+                                    <p>Xüsusi</p>
+                                </div>
+                                <input type="range"
+                                    class="md:ml-4 ml-0 md:w-11/12 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-400 outline-none"
+                                    min="1" max="3" step="1" value="1" onchange="rangePrice()">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 py-4 px-4 bg-[#4a84bf26]">
+                            <h4 class="text-[#285a70]">Xərc :</h4>
+                            <h2 class="text-purple-500 sm:text-[22px] font-semibold"> <span id="page">4</span> səhifə /
+                                ₼ <span id="pricePage">400</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="calcDivs mt-8">
+                </div>
+                <div class="calcDivs mt-8">
+                </div>
+                <div class="calcDivs mt-8">
+                </div>
+                <div>
+                    <h3 class="text-[#212529] text-lg font-medium mt-8">Logo dizaynı</h3>
+                    <div class="bg-[#f8f8fa] mt-2 rounded-md  overflow-hidden flex flex-col gap-4 inps5">
+                        <div class="flex xs:flex-row flex-col xs:justify-between xs:items-center gap-x-2 px-4 py-2">
+                            <div class="flex flex-col justify-center gap-4 w-full xs:mt-0 mt-4">
+                                <div
+                                    class="flex justify-between items-center text-base xs:gap-x-0 gap-x-4 xs:pr-4 pr-0">
+                                    <p>Ehtiyac yoxdur</p>
+                                    <p>Sadə</p>
+                                    <p>Xüsusi</p>
+                                </div>
+                                <input type="range"
+                                    class="lg:ml-8 md:ml-6 ml-0 md:w-11/12 w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-purple-400 outline-none"
+                                    min="1" max="3" step="1" value="1" onchange="rangePrice()">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4 py-4 px-4 bg-[#4a84bf26]">
+                            <h4 class="text-[#285a70]">Xərc :</h4>
+                            <h2 class="text-purple-500 sm:text-[22px] font-semibold">₼ <span id="priceLogo">0</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lmd:w-1/3 w-full h-fit sticky top-0">
+                <div class="flex flex-col gap-4 p-8 bg-white">
+                    <h4>Təklifiniz</h4>
+                    <div class="flex flex-row justify-between items-center">
+                        <p class="text-[#8b8b9a] text-lg">Statik səhifələr :</p>
+                        <p class="text-purple-500 font-bold text-lg">₼ <span id="pricePage">400</span></p>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <p class="text-[#8b8b9a] text-lg">Əlavələr :</p>
+                        <p class="text-purple-500 font-bold text-lg">₼ <span id="priceVeb">0</span></p>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <p class="text-[#8b8b9a] text-lg">SEO :</p>
+                        <p class="text-purple-500 font-bold text-lg">₼ <span id="priceCeo">0</span></p>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <p class="text-[#8b8b9a] text-lg">E-ticarət :</p>
+                        <p class="text-purple-500 font-bold text-lg">₼ <span id="priceE-Ticaret">0</span></p>
+                    </div>
+                    <div class="flex flex-row justify-between items-center">
+                        <p class="text-[#8b8b9a] text-lg">Logo dizaynı :</p>
+                        <p class="text-purple-500 font-bold text-lg">₼ <span id="priceLogo">0</span></p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row justify-between items-center gap-4 text-[#8b8b9a] text-lg text-right">
+                        <p class="font-bold whitespace-nowrap">Qeyd :</p>
+                        <p class="text-lg">Minimum sayt qiyməti <span class="text-purple-500 whitespace-nowrap">₼
+                                450</span></p>
+                    </div>
+                </div>
+                <div class="bg-purple-500 text-white text-2xl p-8 flex flex-row justify-between items-center">
+                    <h2>Ümumi təxmini dəyəri:</h2>
+                    <h3 class="font-semibold whitespace-nowrap">₼ <span id="priceTotal">450</span></h3>
+                </div>
+                <button class="bg-[#2bc48a] w-full text-white text-lg font-bold p-4 rounded-md mt-6">Saytınızı İndi
+                    Sifariş Edin</button>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-[#FAF4FF] w-full mx-auto border-t-[1px] mt-12 border-slate-200 border-solid text-[#4A2182]">
+        <div
+            class="px-4 flex-col gap-[30px] lmd:flex-row mx-auto max-w-[1296px] flex lmd:items-center justify-between lg:gap-[61px] lg:py-20 md:py-10 py-6 p-2">
+            <div class="pt-[72px] md:pt-0 flex flex-col gap-8 md:items-start lmd:w-1/2">
+                <a class="-m-1.5 p-1.5 min-w-[70px]" href="index.html">
+                    <img src="img/saytaz.svg" alt="logo" width="200">
+                </a>
+                <p class="text-base md:text-sm leading-6 max-w-[456px] md:max-h-[130px] mb-10">Sayt.az - Web saytların
+                    hazırlanması, Domain, Hosting satışı, SEO, SMM və texniki xidmətlər təklif edir.</p>
+                <div>
+                    <p class="font-bold mb-4">Bizi izləyin :</p>
+                    <div class="flex gap-6">
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="text-3xl md:text-5xl"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-col md:flex-row gap-12 flex lg:gap-[61px] lmd:w-1/2">
+                <div>
+                    <ul class="flex flex-col gap-4">
+                        <li class="mb-0 md:mb-8 text-[#300B60] font-bold sm:text-2xl text-lg uppercase">Hostinq & Domen
+                        </li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Domen</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Veb Hostinq</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">VPS Hostinq</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Server</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="flex flex-col gap-4">
+                        <li class="mb-0 md:mb-8 text-[#300B60] font-bold sm:text-2xl text-lg uppercase">Şirkət</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Haqqımızda</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Əlaqə</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Bloq</li>
+                        <li class="text-lg leading-6 font-medium hover:text-[#7D3BE2]">Portfolio</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div
+            class="flex-col pb-2 md:pb-0 lmd:flex-row-reverse w-full max-w-[1296px] flex justify-between lmd:items-center items-start mx-auto px-4 border-t border-slate-200 lg:pt-[31px] lg:pb-[22px]">
+            <div
+                class="py-4 flex-col md:flex-row gap-2 text-[16px] flex md:text-base lmd:items-center items-start justify-between md:gap-[16px]">
+                <div class="flex gap-[8px] justify-center items-center">
+                    <i class="fa-solid fa-phone"></i>
+                    <p class="whitespace-nowrap">+(99470) 330-00-04</p>
+                </div>
+                <div class="hidden md:block min-h-[24px] w-[1px] bg-slate-200"></div>
+                <div class="flex gap-[8px] sm:justify-center items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>support@sayt.az</p>
+                </div>
+            </div>
+            <p class="border-t border-slate-200 pt-3 mx-auto md:mx-0 md:border-0 md:p-0 w-full leading-5 lg:h-[10px] ">
+                © Copyright 2004-2025 © Sayt.az. Bütün Hüquqlar Qorunur.
+            </p>
+        </div>
+    </footer>
+    <script src="script/data.js"></script>
+    <script>
+        let calcDivs = document.querySelectorAll(".calcDivs");
+
+        function printDivs() {
+            Object.keys(pricesData).forEach((category, i) => {
+                if (i === 0) {
+                    calcDivs[0].innerHTML += `<h2 class="text-[#212529] text-lg font-medium mt-3">${category}</h2>
+                                            <div class="addOnsPage bg-[#f8f8fa] mt-2 rounded-md  overflow-hidden">
+                                                <div id="veb" class="flex flex-wrap gap-4 p-4 mt-2 inps2">
+
+                                                </div>
+                                                <div class="flex justify-between items-center mt-4 py-4 px-4 bg-[#4a84bf26]">
+                                                    <h4 class="text-[#285a70]">Xərc :</h4>
+                                                    <h2 class="text-purple-500 sm:text-[22px] font-semibold">₼ <span id="priceVeb">0</span></h2>
+                                                </div>
+                                            </div>
+                                            `;
+                    pricesData[category].forEach(item => {
+                        document.getElementById("veb").innerHTML += `
+                            <div name="toggleDiv" class="relative items-center gap-x-2 w-full lg:w-[48%] flex cursor-pointer justify-between" onclick="toggleCheckbox(this)">
+                                <h4 class="text-sm font-medium text-gray-900 w-3/4">${item.title}</h4>
+                                <label for="toggleDiv" class="switch">
+                                    <input class="toggl" type="checkbox" name="${item.title}" data-category="${category}" data-price="${item.price}">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        `;
+
+                    });
+                }
+                else if (i == 1) {
+                    calcDivs[1].innerHTML += `<h2 class="text-[#212529] text-lg font-medium mt-3">${category}</h2>
+                                            <div class="addOnsPage bg-[#f8f8fa] mt-2 rounded-md  overflow-hidden">
+                                                <div id="optimal" class="grid xs:grid-cols-2 grid-cols-1 gap-x-6 gap-y-4 py-4 px-4 inps3">
+
+                                                </div>
+                                                <div class="flex justify-between items-center mt-4 py-4 px-4 bg-[#4a84bf26]">
+                                                    <h4 class="text-[#285a70]">Xərc :</h4>
+                                                    <h2 class="text-purple-500 sm:text-[22px] font-semibold">₼ <span id="priceCeo">0</span></h2>
+                                                </div>
+                                            </div>
+                                            `;
+                    pricesData[category].forEach(item => {
+                        document.getElementById("optimal").innerHTML += `
+                            <div onclick="CheckBox()" class="inline-flex items-center">
+                                <label for="${item.title}" class="relative flex items-center mr-2 rounded-full cursor-pointer h-5 w-5">
+                                    <input type="checkbox" class="cursor-pointer scale-150" id="${item.title}" name="${item.title}" data-category="${category}" data-price="${item.price}"> 
+                                </label>
+                                <label for="${item.title}" class="mt-px text-base text-gray-700 cursor-pointer select-none">${item.title}</label>
+                            </div>
+                        `;
+
+                    });
+                }
+                else if (i == 2) {
+                    calcDivs[2].innerHTML += `<h2 class="text-[#212529] text-lg font-medium mt-3">${category}</h2>
+                                            <div class="addOnsPage bg-[#f8f8fa] mt-2 rounded-md  overflow-hidden">
+                                                <div id="elave" class="flex flex-wrap gap-4 p-4 inps4">
+
+                                                </div>
+                                                <div class="flex justify-between items-center mt-4 py-4 px-4 bg-[#4a84bf26]">
+                                                    <h4 class="text-[#285a70]">Xərc :</h4>
+                                                    <h2 class="text-purple-500 sm:text-[22px] font-semibold">₼ <span id="priceE-Ticaret">0</span></h2>
+                                                </div>
+                                            </div>
+                                            `;
+                    pricesData[category].forEach(item => {
+                        document.getElementById("elave").innerHTML += `
+                            <div name="toggleDiv" class="relative items-center gap-x-2 w-full lg:w-[48%] flex cursor-pointer justify-between" onclick="toggleCheckbox(this)">
+                                <h4 class="text-sm font-medium text-gray-900 w-3/4">${item.title}</h4>
+                                <label for="toggleDiv" class="switch">
+                                    <input class="toggl" type="checkbox" name="${item.title}" data-category="${category}" data-price="${item.price}">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        `;
+
+                    });
+                }
+            });
+        }
+        printDivs();
+
+        function toggleCheckbox(element) {
+            let checkbox = element.querySelector("input")
+            if (checkbox) {
+                checkbox.checked = !checkbox.checked
+            }
+
+            let price2 = 0;
+            let price3 = 0;
+            let price4 = 0;
+
+            let input2 = document.querySelectorAll(".inps2 input")
+            let input4 = document.querySelectorAll(".inps4 input")
+
+            input2.forEach(input => {
+                price2 += input.checked ? +input.dataset.price : 0
+            });
+            input4.forEach(input => {
+                price4 += input.checked ? +input.dataset.price : 0
+            });
+            document.querySelectorAll("#priceVeb").forEach(item => {
+                item.innerHTML = price2
+            })
+            document.querySelectorAll("#priceE-Ticaret").forEach(item => {
+                item.innerHTML = price4
+            })
+            priceTotal()
+
+        }
+        function CheckBox() {
+            let price3 = 0
+            let input3 = document.querySelectorAll(".inps3 input")
+
+            input3.forEach(input => {
+                price3 += input.checked ? +input.dataset.price : 0
+            });
+
+            document.querySelectorAll("#priceCeo").forEach(item => {
+                item.innerHTML = price3
+            })
+            priceTotal()
+
+        }
+        function rangePrice() {
+            let price1 = 0
+            let price5 = 0
+            let input1 = document.querySelectorAll(".inps1 input")
+            let input5 = document.querySelectorAll(".inps5 input")
+            price1 += +input1[0].value * +input1[0].dataset.price
+            price1 *= +input1[1].value
+            price5 += (+input5[0].value - 1) * 100
+            document.getElementById("page").innerHTML = +input1[0].value
+            document.querySelectorAll("#pricePage").forEach(item => {
+                item.innerHTML = price1
+            })
+            document.querySelectorAll("#priceLogo").forEach(item => {
+                item.innerHTML = price5
+            })
+            priceTotal()
+
+        }
+        function priceTotal() {
+            let priceAll = +document.getElementById("priceVeb").innerHTML + +document.getElementById("priceCeo").innerHTML + +document.getElementById("priceE-Ticaret").innerHTML + +document.getElementById("priceLogo").innerHTML + +document.getElementById("pricePage").innerHTML
+            document.getElementById("priceTotal").innerHTML = priceAll >= 450 ? priceAll : 450
+        }
+
+        const menuDivs = document.querySelectorAll('#navbarMenu div')
+        const menuUl = document.querySelectorAll('#navbarMenu ul')
+
+        function scrollToSection() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: "smooth"
+            });
+        }
+        function showMenu(arg) {
+            document.getElementById("currencyMenu").classList.add("hidden")
+            document.getElementById("languageMenu").classList.add("hidden")
+            if (menuUl[arg].classList.contains("hidden")) {
+                menuUl.forEach((ul, i) => {
+                    if (i !== arg) ul.classList.add("hidden")
+                });
+                menuDivs.forEach((div, i) => {
+                    if (i !== arg) div.innerHTML = ""
+                });
+                menuData[arg].forEach(item => {
+                    menuDivs[arg].innerHTML += `
+                    <a href="${item.title === 'Sayt Kalkulyatoru' ? 'calc.html' : '#'}">
+                        <div onclick="navMenu()" class="flex flex-row gap-4 hover:bg-slate-50 px-8 py-3 bg-white">
+                            <div class="p-3 bg-blue-100 rounded-lg max-w-[52px] max-h-[52px]">
+                                <img src="${item.url}" alt="photo" width="28" height="28">
+                            </div>
+                            <div>
+                                <h2 class="text-slate-900 font-medium text-base">${item.title}</h2>
+                                <p class="text-slate-500 md:text-sm text-xs">${item.description}</p>
+                            </div>
+                        </div>
+                    </a> 
+                    `})
+
+                menuUl[arg].classList.remove("hidden")
+            } else {
+                menuDivs[arg].innerHTML = ""
+                menuUl[arg].classList.add("hidden")
+            }
+        }
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest("#navbarMenu li") && !event.target.closest("#navbarMenu ul")) {
+                closeNavMenus()
+            }
+        });
+        document.addEventListener("click", function (event) {
+            const currencyContainer = event.target.closest(".currency-container")
+            const languageContainer = event.target.closest(".language-container")
+
+            if (!currencyContainer) {
+                document.getElementById("currencyMenu").classList.add("hidden")
+            }
+
+            if (!languageContainer) {
+                document.getElementById("languageMenu").classList.add("hidden")
+            }
+        });
+        function navMenu() {
+            closeNavMenus()
+        }
+        function currencyMenu() {
+            const currencyMenu = document.getElementById("currencyMenu")
+            const languageMenu = document.getElementById("languageMenu")
+            languageMenu.classList.add("hidden")
+            currencyMenu.classList.toggle("hidden")
+            closeNavMenus()
+            if (document.getElementById("selectedCurrency").innerHTML == "₼") {
+                document.getElementById("manat").classList.add("bg-gray-100")
+                document.getElementById("dollar").classList.remove("bg-gray-100")
+            }
+            else {
+                document.getElementById("dollar").classList.add("bg-gray-100")
+                document.getElementById("manat").classList.remove("bg-gray-100")
+            }
+        }
+
+        function selectCurrency(currency) {
+            document.getElementById("selectedCurrency").innerText = currency
+            document.getElementById("currencyMenu").classList.add("hidden")
+        }
+        function languageMenu() {
+            const languageMenu = document.getElementById("languageMenu")
+            const currencyMenu = document.getElementById("currencyMenu")
+            currencyMenu.classList.add("hidden")
+            languageMenu.classList.toggle("hidden")
+            closeNavMenus()
+            if (document.getElementById("selectedLanguage").src == document.querySelector("#az img").src) {
+                document.getElementById("az").classList.add("bg-gray-100")
+                document.getElementById("usa").classList.remove("bg-gray-100")
+            }
+            else {
+                document.getElementById("usa").classList.add("bg-gray-100")
+                document.getElementById("az").classList.remove("bg-gray-100")
+            }
+        }
+
+        function selectLanguage(lang) {
+            document.getElementById("selectedLanguage").src = document.querySelector(`#${lang} img`).src
+            document.getElementById("languageMenu").classList.add("hidden")
+        }
+        function closeNavMenus() {
+            menuDivs.forEach(div => div.innerHTML = "")
+            menuUl.forEach(ul => ul.classList.add("hidden"));
+        }
+        function openSidebar() {
+            document.getElementById("sidebarMenu").classList.remove("translate-x-full")
+        }
+        function closeSidebar() {
+            document.getElementById("sidebarMenu").classList.add("translate-x-full")
+        }
+        const sidebarMenuDivs = document.querySelectorAll('#sidebarNavMenu div')
+        const sidebarMenuUl = document.querySelectorAll('#sidebarNavMenu ul')
+
+        function showSidebarMenu(arg) {
+            if (sidebarMenuUl[arg].classList.contains("hidden")) {
+                sidebarMenuUl.forEach((ul, i) => {
+                    if (i !== arg) ul.classList.add("hidden")
+                });
+                sidebarMenuDivs.forEach((div, i) => {
+                    if (i !== arg) div.innerHTML = ""
+                });
+                menuData[arg].forEach(item => {
+                    sidebarMenuDivs[arg].innerHTML += `
+                <a href="${item.title == 'Sayt Kalkulyatoru' ? 'calc.html' : '#'}">
+                    <div onclick="closeSidebar()" class="flex flex-row gap-4 hover:bg-slate-50 px-4 py-3 bg-white">
+                        <div class="p-2 bg-blue-100 rounded-lg max-w-[40px] max-h-[40px]">
+                            <img src="${item.url}" alt="photo" width="20" height="20">
+                        </div>
+                        <div>
+                            <h2 class="text-slate-900 font-medium text-base">${item.title}</h2>
+                            <p class="text-slate-500 text-sm">${item.description}</p>
+                        </div>
+                    </div>
+                </a> 
+                `});
+
+                sidebarMenuUl[arg].classList.remove("hidden")
+            } else {
+                sidebarMenuDivs[arg].innerHTML = ""
+                sidebarMenuUl[arg].classList.add("hidden")
+            }
+        }
+        document.addEventListener("click", function (event) {
+            const sidebarMenu = document.getElementById("sidebarMenu")
+            const hamburgerButton = event.target.closest("button[onclick='openSidebar()']")
+
+            if (!event.target.closest("#sidebarMenu") && !hamburgerButton &&
+                !sidebarMenu.classList.contains("translate-x-full")) {
+                closeSidebar();
+            }
+        })
+    </script>
+</body>
+
+</html>
